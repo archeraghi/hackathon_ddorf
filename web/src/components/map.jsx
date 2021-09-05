@@ -1,8 +1,9 @@
 import React, {useState }from 'react'
 import { GoogleMap, LoadScript, Polygon } from '@react-google-maps/api';
 
-import { data } from '../polygons/test';
-import bezirke from "../polygons/bezirke.json"
+import { data } from '../data/test';
+import bezirke from "../data/bezirke.json"
+import MapModal from './MapModal';
 
 
 const containerStyle = {
@@ -37,6 +38,7 @@ const options_selected = {
 function Map() {
 
   const [active, setActive] = useState(false)
+  const [modal, setModal] = useState(false)
 
   const Polygons = bezirke.map(element => {
     return(
@@ -45,7 +47,8 @@ function Map() {
         key={element.bezirk}
         options= {active===element.bezirk? options_selected: options} 
         onClick={() => {
-          setActive(element.bezirk)}}
+          setActive(element.bezirk)
+          setModal(true)}}
         />
     )
 
@@ -60,11 +63,12 @@ function Map() {
         center={center}
         onClick={()=> {
           setActive(null)
+          setModal(false)
         }}
         zoom={13}
       >
         {Polygons}
-         
+        {modal? <MapModal data={null}/> : null} 
       </GoogleMap>
     </LoadScript>
   )
