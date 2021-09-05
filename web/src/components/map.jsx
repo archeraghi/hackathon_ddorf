@@ -1,5 +1,7 @@
-import React, {useState }from 'react'
+import React, {useState, createContext, useContext, Children }from 'react'
 import { GoogleMap, LoadScript, Polygon } from '@react-google-maps/api';
+
+import { GlobalContextProvider } from './GlobalContex';
 
 import daily_need from "../data/daily_need.json"
 import bezirke from "../data/bezirke.json"
@@ -9,8 +11,8 @@ import MapModal from './MapModal';
 const containerStyle = {
     position: "absolute",
     width: "100%",
-    height: "90%",
-    top: "10%"
+    height: "93%",
+    top: "7%"
 };
 
 const center = {
@@ -21,17 +23,30 @@ const center = {
 const options = {
   fillColor: "#000",
   fillOpacity: 0.4,
-  strokeColor: "#000",
-  strokeOpacity: 0.6,
-  strokeWeight: 3
+  strokeColor: "#fff",
+  strokeOpacity: 0.7,
+  strokeWeight: 1,
+  zIndex: 1
 }
 
 const options_selected = {
-  fillColor: "#0509ff",
+  fillColor: "#fff",
   fillOpacity: 0.5,
-  strokeColor: "#0509ff",
+  strokeColor: "#fff",
   strokeOpacity: 0.7,
-  strokeWeight: 7
+  strokeWeight: 2,
+  zIndex: 2,
+}
+
+const headingStyle = {
+  position: "absolute",
+  top: 110,
+  right: 50,
+  zIndex: 500,
+  color: "#fff",
+  textShadow: "0 0 3px #000",
+  fontSize: "35px",
+  fontWeight: "bold"
 }
 
 
@@ -59,13 +74,11 @@ function Map() {
     <LoadScript
       googleMapsApiKey="AIzaSyA1PSLKAEjhsNPMpmY72mQnpULpgB0EcEQ"
     >
+    <h1 style={headingStyle}>DÜSSELDORF CRISIS MAP </h1>
       <GoogleMap
         mapContainerStyle={containerStyle}
         options={{
-          zoomControl: false,
-          scaleControl: false,
-          streetViewControl: false,
-          rotateControl: false,
+          disableDefaultUI: true,
           mapTypeId: "satellite"
         }}
         center={center}
@@ -73,10 +86,12 @@ function Map() {
           setModal(false)
           setActive(null)
         }}
-        zoom={13}
+        zoom={11.5}
       >
         {Polygons}
-        {modal? <MapModal bezirk={active} data={daily_need[active]}/> : null} 
+        <GlobalContextProvider>
+          {modal? <MapModal bezirk={active} data={daily_need[active]}/> : null} 
+        </GlobalContextProvider>
       </GoogleMap>
     </LoadScript>
   )

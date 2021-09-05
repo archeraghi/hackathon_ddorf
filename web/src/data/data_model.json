@@ -1,0 +1,31 @@
+{
+    "bezirk": "01",
+    "einwohner": "einwohner",
+    "einwohner/m²": "einwohner/m²",
+    "avg. age": "avg age",
+    "avg. houshold": "avg. houshold",
+    "suplyData":{
+        "2020": {
+            "food":"food",
+            "water":"water"
+        },
+        "2021": {
+            "food":"food",
+            "water":"water"
+        },
+        "2022": {
+            "food":"food",
+            "water":"water"
+        }
+    }
+}
+
+
+{
+    "id": "id",
+    "type": "type",
+    "location": {
+        "lat": "lat",
+        "lng": "lng"
+    }
+}
