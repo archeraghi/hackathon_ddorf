@@ -2,37 +2,101 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.optionStyle{
+  width: 33.3%;
+  background-color: #B3B3B3;
+  text-align: center;
+  padding: 15px 0px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  transform: translate(0px, -5px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.optionStyle:hover {
+  background-color: #8b8b8b;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.optionStyle.a {
+  background-color: rgb(65, 65, 65);
 }
 
-.App-link {
-  color: #61dafb;
+.hr {
+  background-color: #B3B3B3;
+  height: 4px;
+  width: 100%;
+  border-radius: 2px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.contentContainer {
+  padding: 20px;
+}
+
+.contentContainer h4 {
+  margin: 0px 0 10px;
+  font-size: 20px;
+}
+
+.tableContainer {
+  background-color: rgba(255, 255, 255, 0.904);
+  border-radius: 20px;
+  padding: 10px;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+table{
+  margin-left: 40px ;
+  border-collapse: collapse;
+}
+td.name {
+  font-weight: 600;
+  color: #000;
+  text-align: left;
+}
+
+td {
+  width: 226px;
+  border-bottom: solid 1px #000; 
+  text-align: center;
+}
+
+.range {
+  -webkit-appearance: none;
+  width:  70%;
+  height: 7px;
+  background: #B3B3B3;
+  outline: none;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  border-radius: 3px;
+  margin-top: 12.5px;
+}
+
+.range::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 48px;
+  height: 48px;
+  background: #7CE577;
+  cursor: pointer;
+  border: none;
+  transform: translate(-5px);
+}
+
+.range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background: #202020;
+  cursor: pointer;
+  border: none;
+  transform: translate(-5px);
+}
+
+select {
+  font-size: 20px;
+  margin-left: 30px;
+  padding: 5px;
+  border-radius:  5px; 
+  border: none
 }

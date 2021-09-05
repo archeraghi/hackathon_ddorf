@@ -15,10 +15,10 @@ function App() {
               <Route path="/map">
                 <Map />
               </Route>
-              <Route path="/team">
+              <Route path="/teams">
                 <NotDoneJet/>
               </Route>
-              <Route path="/suply">
+              <Route path="/supply">
                 <NotDoneJet/>
               </Route>
               <Route path="/">
