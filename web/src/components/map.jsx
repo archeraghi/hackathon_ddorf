@@ -1,7 +1,7 @@
 import React, {useState }from 'react'
 import { GoogleMap, LoadScript, Polygon } from '@react-google-maps/api';
 
-import { data } from '../data/test';
+import daily_need from "../data/daily_need.json"
 import bezirke from "../data/bezirke.json"
 import MapModal from './MapModal';
 
@@ -10,6 +10,7 @@ const containerStyle = {
     position: "absolute",
     width: "100%",
     height: "90%",
+    top: "10%"
 };
 
 const center = {
@@ -60,15 +61,22 @@ function Map() {
     >
       <GoogleMap
         mapContainerStyle={containerStyle}
+        options={{
+          zoomControl: false,
+          scaleControl: false,
+          streetViewControl: false,
+          rotateControl: false,
+          mapTypeId: "satellite"
+        }}
         center={center}
         onClick={()=> {
-          setActive(null)
           setModal(false)
+          setActive(null)
         }}
         zoom={13}
       >
         {Polygons}
-        {modal? <MapModal data={null}/> : null} 
+        {modal? <MapModal bezirk={active} data={daily_need[active]}/> : null} 
       </GoogleMap>
     </LoadScript>
   )
