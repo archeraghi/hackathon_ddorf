@@ -3,6 +3,7 @@ import { GoogleMap, LoadScript, Polygon, Marker } from '@react-google-maps/api';
 
 import { GlobalContextProvider } from './GlobalContex';
 
+
 import daily_need from "../data/daily_need.json"
 import bezirke from "../data/bezirke.json"
 import MapModal from './MapModal';
@@ -69,6 +70,13 @@ function Map() {
     )
 
   })
+  const places = []
+
+  // const Marker = places.map( element => {
+  //   <Marker
+  //     position={{lat:element.latitude, lng:element.longitude}} 
+  //     />
+  // })
 
 
   return (
@@ -89,8 +97,9 @@ function Map() {
         }}
         zoom={11.5}
       >
-        <Marker 
-          position={51.23295680777698, 6.788697597121482}/>
+        <Marker  
+          position={{lat:51.23295680777698, lng:6.788697597121482}}
+          />
         {Polygons}
         <GlobalContextProvider>
           {modal? <MapModal bezirk={active} data={daily_need[active]}/> : null} 

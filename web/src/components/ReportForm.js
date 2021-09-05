@@ -20,10 +20,10 @@ function ReportForm() {
     <div className="App" style={{position: "absolute", marginTop : 250}}>
       <center>
       <select value={needed} onChange={(e) => setNeeded(e.target.value)}>
-            <option value="food">Food</option>
-            <option value="hygiene">Hygiene Products</option>
-            <option value="medicalSupply">Medical Supply</option>
-            <option value="clothes">Clothes</option>
+            <option value="blockedRoad">Blocked Road</option>
+            <option value="medicalEmergency">Medical Emergency</option>
+            <option value="footDefect">Foot defect</option>
+            <option value="waterDefect">Water defect</option>
       </select>
       <br/><br/>
       <input placeholder="latitude" value={latitude} 

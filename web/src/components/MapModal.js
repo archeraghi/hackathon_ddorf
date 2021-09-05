@@ -9,15 +9,15 @@ const MapModal = (props) => {
     const [scope, setScope] = useState("day")
 
     const food = () => {
-        if(scope==="day") return props.data[0] 
-        if(scope==="week") return props.data[0] * 7
-        if(scope==="month") return props.data[0] * 30
+        if(scope==="day") return props.data[year].food 
+        if(scope==="week") return props.data[year].food * 7
+        if(scope==="month") return props.data[year].food * 30
     }
 
     const water = () => {
-        if(scope==="day") return props.data[1] 
-        if(scope==="week") return props.data[1] * 7
-        if(scope==="month") return props.data[1] * 30
+        if(scope==="day") return props.data[year].water 
+        if(scope==="week") return props.data[year].water * 7
+        if(scope==="month") return props.data[year].water * 30
     }
 
 
@@ -44,19 +44,19 @@ const MapModal = (props) => {
                 <table>
                     <tr>
                         <td className="name">total:</td>
-                        <td></td>
+                        <td>{props.data[year].population}</td>
                     </tr>
                     <tr>
                         <td className="name">dencity (p/km²)</td>
-                        <td></td>
+                        <td>{props.data[year].pop_density}</td>
                     </tr>
                     <tr>
                         <td className="name">% in vulnerable age (0-18/65+):</td>
-                        <td></td>
+                        <td>{props.data[year].ratio_vulnerable_age.toFixed(2)}</td>
                     </tr>
                     <tr>
                         <td className="name">avg. houshold size:</td>
-                        <td></td>
+                        <td>{props.data[year].mean_household_size}</td>
                     </tr>
                 </table>
                 </div>
@@ -65,15 +65,15 @@ const MapModal = (props) => {
                 <table>
                     <tr>
                         <td className="name">total:</td>
-                        <td>{food()}</td>
+                        <td>{Math.floor(food())}</td>
                     </tr>
                     <tr>
                         <td className="name">from Protein:</td>
-                        <td></td>
+                        <td>{Math.floor(food() * 0.17)}</td>
                     </tr>
                     <tr>
                         <td className="name">from Fat:</td>
-                        <td></td>
+                        <td>{Math.floor(food()* 0.12)}</td>
                     </tr>
                 </table>
                 </div>
@@ -82,7 +82,7 @@ const MapModal = (props) => {
                 <table>
                     <tr>
                         <td className="name">drinkable:</td>
-                        <td>{water()}</td>
+                        <td>{water().toFixed(2)}</td>
                     </tr>
                 </table>
                 </div>
