@@ -17,7 +17,7 @@ function ReportForm() {
   }
   
   return (
-    <div className="App" style={{marginTop : 250}}>
+    <div className="App" style={{position: "absolute", marginTop : 250}}>
       <center>
       <select value={needed} onChange={(e) => setNeeded(e.target.value)}>
             <option value="food">Food</option>

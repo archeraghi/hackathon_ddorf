@@ -20,6 +20,9 @@ const Nav = () => {
             <a href ="/supply" style={noTextDec}>
                 <div id="/supply" style={path === "/supply"?navContainerStyle_a: navContainerStyle}>Supply</div>
             </a>
+            <a href ="/report" style={noTextDec}>
+                <div id="/report" style={path === "/report"?navContainerStyle_a: navContainerStyle}>Report</div>
+            </a>
         </div>
     )    
 }
