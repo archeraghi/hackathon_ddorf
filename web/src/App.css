@@ -100,3 +100,37 @@ select {
   border-radius:  5px; 
   border: none
 }
+
+.Form {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 100%;
+}
+
+.Form #mobileSelect {
+  font-size: 30px;
+  color: #000;
+  margin-left: 0;
+  border: 2px solid;
+}
+
+.Form input {
+  font-size: 30px;
+  width: 250px;
+  border: solid 2px #000;
+  border-radius: 5px ;
+}
+
+.Form button {
+  font-size: 30px;
+  padding: 5px 25px;
+  border: none;
+  background-color: grey;
+  font-weight: bold;
+  color: #fff;
+
+}

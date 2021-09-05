@@ -7,11 +7,12 @@ import Nav from './components/Nav';
 import NotDoneJet from './components/NotDoneJet';
 import ReportForm from "./components/ReportForm"
 
+
 function App() {
   return (
     <div className="App">
           <BrowserRouter>
-            <Nav />
+            {window.location.pathname==="/report"? null: <Nav />}
             <Switch>
               <Route path="/map">
                 <Map />

@@ -17,9 +17,9 @@ function ReportForm() {
   }
   
   return (
-    <div className="App" style={{position: "absolute", marginTop : 250}}>
-      <center>
-      <select value={needed} onChange={(e) => setNeeded(e.target.value)}>
+    <div className="Form">
+      <div>
+      <select id="mobileSelect"value={needed} onChange={(e) => setNeeded(e.target.value)}>
             <option value="blockedRoad">Blocked Road</option>
             <option value="medicalEmergency">Medical Emergency</option>
             <option value="footDefect">Foot defect</option>
@@ -33,7 +33,7 @@ function ReportForm() {
       onChange={(e) => setLongitude(e.target.value)}/>
       <br/><br/> 
       <button onClick={Push}>PUSH</button>
-      </center>
+      </div>
     </div>
   );
 }
