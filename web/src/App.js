@@ -5,6 +5,7 @@ import './App.css';
 import Map from './components/map'
 import Nav from './components/Nav';
 import NotDoneJet from './components/NotDoneJet';
+import ReportForm from "./components/ReportForm"
 
 function App() {
   return (
@@ -15,11 +16,14 @@ function App() {
               <Route path="/map">
                 <Map />
               </Route>
-              <Route path="/team">
+              <Route path="/teams">
                 <NotDoneJet/>
               </Route>
-              <Route path="/suply">
+              <Route path="/supply">
                 <NotDoneJet/>
+              </Route>
+              <Route path="/report">
+                <ReportForm />
               </Route>
               <Route path="/">
                 <NotDoneJet/>

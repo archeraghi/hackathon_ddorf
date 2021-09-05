@@ -1,45 +1,54 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 const Nav = () => {
 
-    return(
-        <div style={{
-            position: "absolute",
-            display: "flex",
-            flexWrap: "wrap",
-            alignItems: "center",
-            height: "10%",
-            width: "100%",
-            top: "0",
-            zIndex: 20,
-            backgroundColor: "#fff"
-        }}>
-            <Link to="/" style={noTextDec}>
-                <div style={{
-                    position: "relative",
-                    width: "50px",
-                    height: "50px",
-                    margin: "0 25px",
-                    borderRadius: "25px",
-                    backgroundColor: "#000"
 
-                }}/>
-            </Link>
-            <Link to="/map" style={noTextDec}>
-                <div style={navContainerStyle}>Map</div>
-            </Link>
-            <Link to= "/teams" style={noTextDec}>
-                <div style={navContainerStyle}>Teams</div>
-            </Link>
-            <Link to ="/supplys" style={noTextDec}>
-                <div style={navContainerStyle}>Supply</div>
-            </Link>
+    const path =window.location.pathname
+
+
+    return(
+        <div style={NavStyle}>
+            <a href="/" style={noTextDec}>
+                <div style={logoStyle}/>
+            </a>
+            <a href="/map" style={noTextDec}>
+                <div id="/map" style={path === "/map"?navContainerStyle_a: navContainerStyle}>Map</div>
+            </a>
+            <a href= "/teams" style={noTextDec}>
+                <div id="/teams" style={path === "/teams"?navContainerStyle_a: navContainerStyle}>Teams</div>
+            </a>
+            <a href ="/supply" style={noTextDec}>
+                <div id="/supply" style={path === "/supply"?navContainerStyle_a: navContainerStyle}>Supply</div>
+            </a>
+            <a href ="/report" style={noTextDec}>
+                <div id="/report" style={path === "/report"?navContainerStyle_a: navContainerStyle}>Report</div>
+            </a>
         </div>
     )    
 }
 
-const navContainerStyle = {
+const NavStyle = {
+    position: "absolute",
+    display: "flex",
+    flexWrap: "wrap",
+    alignItems: "center",
+    height: "7%",
+    width: "100%",
+    hrefp: "0",
+    zIndex: 20,
+    backgroundColor: "#f5f5f5",
+    boxShadow: "inset 0px -5px #B3B3B3"
+}
+
+const logoStyle = {
+    position: "relative",
+    width: "70px",
+    height: "70px",
+    margin: "0 25px",
+    borderRadius: "40px",
+    backgroundColor: "#cccccc" 
+}
+const navContainerStyle_a = {
     display: "flex",
     alignItems: "center",
     height: "40px",
@@ -47,6 +56,20 @@ const navContainerStyle = {
     margin: "20px",
     backgroundColor: "#000",
     color: "#fff",
+    fontSize: "20px",
+    fontWeight: "bold"
+
+}
+const navContainerStyle = {
+    display: "flex",
+    alignItems: "center",
+    height: "40px",
+    padding: "0 20px",
+    margin: "20px",
+    backgroundColor: "#b3b3b3",
+    color: "#fff",
+    fontSize: "20px",
+    fontWeight: "bold"
 
 }
 
