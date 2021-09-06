@@ -1,4 +1,4 @@
-import React, {useState, createContext, useContext, Children }from 'react'
+import React, {useState}from 'react'
 import { GoogleMap, LoadScript, Polygon, Marker } from '@react-google-maps/api';
 
 import { GlobalContextProvider } from './GlobalContex';
@@ -76,7 +76,7 @@ function Map() {
 
   return (
     <LoadScript
-      googleMapsApiKey="AIzaSyA1PSLKAEjhsNPMpmY72mQnpULpgB0EcEQ"
+      googleMapsApiKey="AIzaSyALYoh7_ArnvvBhdJi3aGxV97xzjfrGmI0"
     >
     <h1 style={headingStyle}>DÜSSELDORF CRISIS MAP </h1>
       <GoogleMap

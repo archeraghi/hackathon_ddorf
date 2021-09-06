@@ -20,12 +20,3 @@
     }
 }
 
-
-{
-    "id": "id",
-    "type": "type",
-    "location": {
-        "lat": "lat",
-        "lng": "lng"
-    }
-}

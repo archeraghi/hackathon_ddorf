@@ -2,6 +2,8 @@ import React, {useState} from "react";
 
 import { useGlobalContext } from "./GlobalContex";
 
+import imgData from "../data/imgData.json"
+
 const MapModal = (props) => {
 
     const {year, setYear} = useGlobalContext()
@@ -27,7 +29,7 @@ const MapModal = (props) => {
 
     return(
         <div style={modalContainer}>
-            <img src="https://www.duesseldorf-tourismus.de/_Resources/Persistent/6cc1c16e48b61568b66d07109ce90802df150d6c/luftaufnahme-9231x4827-1200x627.jpg" alt="Düsseldorf" 
+            <img src={imgData[props.bezirk]} alt="Düsseldorf" 
             style={imgStyle}/>
             <h2 style={headingStyle}>Bezirk {props.bezirk}</h2>
             <div style={{display: "flex", flexWrap: "wrap",  
@@ -143,22 +145,8 @@ const headingStyle = {
 
 }
 
-const style = {
-    textShadow: "0px 0px 1px #000",
-    margin: "0"
-}
 
-const optionStyle = {
-    // width: "33.3%",
-    // height: "50px",
-    // backgroundColor: "#B3B3B3",
-    // color: "#fff",
-    // fontWeight: "bold"
-}
-const optionStyle_a = {
-    // width: "33.3%",
-    // margin: "15px 0",
-    // backgroundColor: "rgba(5, 9, 255, .6)" ,
-}
+
+
 
 export default MapModal
